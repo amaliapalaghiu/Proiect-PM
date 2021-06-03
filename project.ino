@@ -22,6 +22,7 @@ void printer() {
   Serial.print(smokeSensor);
   Serial.print("] [Humidity level: ");
   Serial.print(humiditySensor);
+  Serial.print("]");
 }
 
 void loop() {
@@ -31,14 +32,14 @@ void loop() {
     if (humiditySensor > humidityThreshold) {
       digitalWrite(pump, HIGH);
       printer();
-      Serial.println("] [Pump OFF]");
+      Serial.println("[Pump OFF]");
     } else if (smokeSensor > smokeThreshold) {
       digitalWrite(pump, LOW);
       printer();
-      Serial.println("] [PUMP ON]"); 
+      Serial.println("[PUMP ON]"); 
     } else {
       printer();
-      Serial.println("]");
+      Serial.println("");
     }
     
     delay(2000);
