@@ -22,7 +22,7 @@ void printer() {
   Serial.print(smokeSensor);
   Serial.print("] [Humidity level: ");
   Serial.print(humiditySensor);
-  Serial.print("]");
+  Serial.print("] ");
 }
 
 void loop() {
